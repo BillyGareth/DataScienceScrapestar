@@ -20,14 +20,16 @@ f.write(headers)
 for container in containers:
 	item_name=page_soup.findAll("h3","name")
 	pro_name = item_name[0].text
+	print(pro_name)
 
 	pricing=page_soup.findAll("div","prc")
 	price=pricing[0].text
+	print(price)
 
 	#reduction=page_soup.findAll("div","tag_dsct_sm")
 	#discount=reduction[0].text
-	print("pro_name: " + pro_name)
-	print("price: " + price)
+	#print("pro_name: " + pro_name)
+	#print("price: " + price)
 
 	f.write(pro_name.replace(",","|") + "," + price + "\n")
 
